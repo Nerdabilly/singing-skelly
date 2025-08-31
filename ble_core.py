@@ -2,7 +2,8 @@ from bleak import BleakClient
 import asyncio
 import requests
 
-BLE_DEVICE_ADDRESS = "81:58:8C:87:67:72"
+# Change to your own Skelly address - use ble_scanner.py to find it! 
+BLE_DEVICE_ADDRESS = "12:34:56:78:90:AB"
 
 WRITE_UUID = "0000ae01-0000-1000-8000-00805f9b34fb"
 NOTIFY_UUID = "0000ae02-0000-1000-8000-00805f9b34fb"
