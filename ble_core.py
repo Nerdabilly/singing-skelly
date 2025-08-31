@@ -1,11 +1,8 @@
 from bleak import BleakClient
 import asyncio
 import requests
-import json 
-from pprint import pprint
 
-# change to your own device address! This can be obtained using the app at https://tinkertims.github.io/skelly/
-BLE_DEVICE_ADDRESS = "12:34:56:78:90:AB"
+BLE_DEVICE_ADDRESS = "81:58:8C:87:67:72"
 
 WRITE_UUID = "0000ae01-0000-1000-8000-00805f9b34fb"
 NOTIFY_UUID = "0000ae02-0000-1000-8000-00805f9b34fb"
@@ -88,15 +85,14 @@ def handle_notification(sender, data):
             fut.set_result(file_info)
     
     if hexstr.startswith("BBC6"):
-        #print(f"[BBD0] Received {hexstr}")
+      
         playing = last_param_sent == 1  # <== 1 = playing, 0 = paused?
-        #print(f"[BBD0] Playing? {playing}")
+       
         if last_param_sent is None or last_param_sent != playing:
             state = "PLAYING" if playing else "PAUSED"
-            #print(f"[INFO] Playback state changed: {state}")
 
         serial = int(hexstr[4:8], 16)
-        #playing = int(hexstr[8:10], 16) 
+
         duration = int(hexstr[10:14], 16)
 
         is_playing = (bool(playing))
@@ -109,14 +105,10 @@ def handle_notification(sender, data):
                 response = requests.put( 'http://127.0.0.1:8001/v1/player/resume')
                     
                              
-                print("http request normally here")
                 print(f"[HTTP] PUT status: {response.status_code} Reason: {response.reason}")
                 print(f"[HTTP] PUT status: {response.url}")
                 print(f"[HTTP] Headers: {response.headers}")
                 
-             
-
-                pprint(vars(response.request))
             except requests.exceptions.RequestException as e:
                 print(f"[HTTP ERROR] {e}")
 

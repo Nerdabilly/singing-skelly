@@ -75,23 +75,5 @@ async def main():
         await command_server(client)
 
 
-    
-
-# async def main():
-#     print("🔍 Scanning for BLE device...")
-#     device = await BleakScanner.find_device_by_address(BLE_DEVICE_ADDRESS)
-
-#     if not device:
-#         print("❌ BLE device not found.")
-#         return
-
-#     async with BleakClient(device) as client:
-#         print(f"✅ Connected to {device.address}")
-#         await client.start_notify(NOTIFY_UUID, handle_notification)
-#         await command_server(client)
-    
-#     loop = asyncio.get_event_loop()
-#     loop.create_task(poll_file_info_loop())
-
 if __name__ == "__main__":
     asyncio.run(main())
