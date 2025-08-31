@@ -7,11 +7,10 @@ from ble_core import (
     handle_notification,
     play_or_pause_file,
     query_file_info,
-    NOTIFY_UUID
+    NOTIFY_UUID,
+    BLE_DEVICE_ADDRESS
 )
 
-# change to your own device address! This can be obtained using the app at https://tinkertims.github.io/skelly/
-BLE_DEVICE_ADDRESS = "12:34:56:78:90:AB"
 SERVER_HOST = "127.0.0.1"
 SERVER_PORT = 8765
 

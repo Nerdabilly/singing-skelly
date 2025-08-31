@@ -4,10 +4,7 @@ import threading
 from bleak import BleakClient, BleakScanner
 from queue import Queue
 
-from ble_core import play_or_pause_file, WRITE_UUID, NOTIFY_UUID, handle_notification
-
-# change to your own device address! This can be obtained using the app at https://tinkertims.github.io/skelly/
-BLE_DEVICE_ADDRESS = "12:34:56:78:90:AB"
+from ble_core import play_or_pause_file, WRITE_UUID, NOTIFY_UUID, BLE_DEVICE_ADDRESS, handle_notification
 
 command_queue = Queue()
 ble_client = None

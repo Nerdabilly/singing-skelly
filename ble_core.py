@@ -4,6 +4,9 @@ import requests
 import json 
 from pprint import pprint
 
+# change to your own device address! This can be obtained using the app at https://tinkertims.github.io/skelly/
+BLE_DEVICE_ADDRESS = "12:34:56:78:90:AB"
+
 WRITE_UUID = "0000ae01-0000-1000-8000-00805f9b34fb"
 NOTIFY_UUID = "0000ae02-0000-1000-8000-00805f9b34fb"
 last_playing_state = None  # True or False

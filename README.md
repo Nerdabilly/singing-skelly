@@ -34,6 +34,8 @@ The basic process is:
 
 ## Getting the Vocal Tracks 
 
+It's important to note here that we won't be using Skelly's internal speaker - not only is it low quality, but if you're running a LOR show you probably have much better options for sound, and we really just want the jaw movement to sync with the vocals. 
+
 One of the main issues with standard use of the Ultra Skelly is that the jaw movements don't always sync predictably - they have been known to sync to drums or other rhythm tracks, background vocals, other loud noises in the track, etc. To avoid this (and to save space on Skelly's relatively small memory) we need to extract only the vocal tracks from each song you want to synchronize. I used [Audacity](https://www.audacityteam.org/) with the [OpenVINO AI Effects](https://www.audacityteam.org/download/openvino/) plugins - both are free and open-source and wrote a Macro to extract the vocals and save them out as MP3s. 
 
 If you don't want to go through all that, or you only have a few tracks to work with, there are easier ways as well - I've used [vocalremover.org](https://vocalremover.org/) with decent results as well. 
@@ -42,4 +44,8 @@ If you don't want to go through all that, or you only have a few tracks to work 
 
 ## Uploading the tracks to Skelly 
 
-Another issue with the default Skelly app is that it doesn't allow tracks longer than 30 seconds. This makes sense, the onboard memory is limited and BLE transfer speeds can be very slowly. This is where the original [Ultra Skelly App Tools](https://github.com/tinkertims/SVI-Ultra-Skelly-Tools) comes in - using the (Web-based app)[https://tinkertims.github.io/skelly/] we can upload full length tracks. The app will complain, but I didn't have any issues doing that.   
+Another issue with the default Skelly app is that it doesn't allow tracks longer than 30 seconds. This makes sense, the onboard memory is limited and BLE transfer speeds can be very slowly. This is where the original [Ultra Skelly App Tools](https://github.com/tinkertims/SVI-Ultra-Skelly-Tools) comes in - using the (Web-based app)[https://tinkertims.github.io/skelly/] we can upload full length tracks. The app will complain, but I didn't have any issues doing that. I also found it performed a little faster by downloading it from the source repo and running it off of `localhost`, but the hosted version is fine too. I do recommend converting the files to the default format (8kHz mono) as that speeds up the transfer and uses less space. 
+
+## Connect the show player computer to Skelly using BLE
+
+Here's where things get tricky - the pyth
