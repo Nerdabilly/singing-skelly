@@ -6,7 +6,9 @@ from queue import Queue
 
 from ble_core import play_or_pause_file, WRITE_UUID, NOTIFY_UUID, handle_notification
 
-BLE_DEVICE_ADDRESS = "81:58:8C:87:67:72"
+# change to your own device address! This can be obtained using the app at https://tinkertims.github.io/skelly/
+BLE_DEVICE_ADDRESS = "12:34:56:78:90:AB"
+
 command_queue = Queue()
 ble_client = None
 
