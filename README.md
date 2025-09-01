@@ -82,6 +82,9 @@ python -m ble_daemon
 
 (I don't know why, but my system complained when I didn't run it as a module. YMMV)
 
+## 👇👇👇 SUPER IMPORTANT!! 👇👇👇
+You **must** have the `ble_daemon` script running in a Command Prompt window while the LOR player runs - it's what keeps the connection active and sends the Bluetooth commands back and forth to Skelly. Without it, this just won't work and you'll probably see a lot of weird errors and strange behavior. 
+
 ## Send a Windows system command to tell Skelly what song to play
 
 This is what ties it all together - each sequence will start by telling Skelly what vocal track to play. Again, make sure you have the **Advanced** Light-O-Rama license for this - you won't have the ability to use Windows system commands if you don't. 
