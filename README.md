@@ -107,7 +107,7 @@ The basic flow is:
 
 ## Playing the right file 
 
-Remember **each** sequence needs its own CMD file to play the associated vocal track on Skelly. Duplicate the example file for each seuence and change the `serial` parameter on the command to `ble_send.py` to match the index of the vocal track. You can get this list on the [Skelly BLE Controller](https://tinkertims.github.io/skelly/) web app (it's the number in the first column under the file list). It's a good idea to run the sequence in the Sequencer with the CMD file linked up to make sure it's starting the right file. If it isn't see, use `ble_send.py playpause --serial 15 --action 0` to stop playback. 
+Remember **each** sequence needs its own CMD file to play the associated vocal track on Skelly. Duplicate the example file for each sequence and change the `serial` parameter on the command to `ble_send.py` to match the index of the vocal track. You can get this list on the [Skelly BLE Controller](https://tinkertims.github.io/skelly/) web app (it's the number in the first column under the file list). It's a good idea to run the sequence in the Sequencer with the CMD file linked up to make sure it's starting the right file. If it isn't see, use `ble_send.py playpause --serial 15 --action 0` to stop playback. 
 
 **Note:** If you're previewing in the Sequencer, the sync will probably be off. This is because it's waiting for the REST API calls to sync up. To get a more accurate preview, add your sequence to a Show in the LOR Control Panel and play the show (you don't actually need to be connected to a LOR controller to do this!)
 
