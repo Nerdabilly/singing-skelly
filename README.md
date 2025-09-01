@@ -48,6 +48,14 @@ Another issue with the default Skelly app is that it doesn't allow tracks longer
 
 I'd also recommend previewing them through the Skelly app or the web player - you want to make sure the jaw movement looks good. 
 
+You can also play/pause them from the Command Prompt if you don't want to mess around with connecting/disconnecting the Skelly once you've completed the next step. 
+
+```
+python "C:\Users\path\to\this\project\ble_send.py" playpause --serial 15 --action 0
+```
+(If you're sending `action 0` to pause the playback, then the `serial` parameter doesn't actually matter here - it will pause whatever file is playing.)
+
+
 ## Connect the show player computer to Skelly using BLE
 
 Here's where things get tricky - you need to get the Hardware ID of your Skelly and plug it into `ble_core.py`. To help with this, use the included `ble_scanner.py`. You may have to do a `pip install bleak` first if you haven't already. 
@@ -96,6 +104,14 @@ The basic flow is:
 1. The CMD file calls the Python script telling Skelly to play the vocal track
 1. Skelly transmits saying the file has started playing
 1. The Python script receives the command and sends a call to the LOR REST API to resume playing the sequence. 
+
+## Playing the right file 
+
+Remember **each** sequence needs its own CMD file to play the associated vocal track on Skelly. Duplicate the example file for each seuence and change the `serial` parameter on the command to `ble_send.py` to match the index of the vocal track. You can get this list on the [Skelly BLE Controller](https://tinkertims.github.io/skelly/) web app (it's the number in the first column under the file list). It's a good idea to run the sequence in the Sequencer with the CMD file linked up to make sure it's starting the right file. If it isn't see, use `ble_send.py playpause --serial 15 --action 0` to stop playback. 
+
+**Note:** If you're previewing in the Sequencer, the sync will probably be off. This is because it's waiting for the REST API calls to sync up. To get a more accurate preview, add your sequence to a Show in the LOR Control Panel and play the show (you don't actually need to be connected to a LOR controller to do this!)
+
+**Also Note:** LOR Sequences **will not** dynamically update if a CMD file changes. If you need to change _any_ of the parameters in a linked CMD file, make the changes, and then go back into the Sequencer and link the CMD file again using the "New Command" option. 
 
 ---
 
