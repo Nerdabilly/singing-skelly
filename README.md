@@ -86,7 +86,7 @@ From there, you can select the `.cmd` file to start communicating with Skelly. T
 
 ### That's where the Light-O-Rama REST API comes in. 
 
-You need to enable the LOR REST API in order to synchronize Skelly. To do this, open the LOR Control Panel, click Settings, then Integration, and turn on the REST API option. You shouldn't have to anything else here, but make sure the Port for the LOR REST API is **different** from the `SERVER_PORT` variable at the top of 'ble_daemon.py` 
+You need to enable the LOR REST API in order to synchronize Skelly. To do this, open the LOR Control Panel, click Settings, then Integration, and turn on the REST API option. You shouldn't have to anything else here, but make sure the Port for the LOR REST API is **different** from the `SERVER_PORT` variable at the top of `ble_daemon.py` 
 
 
 The basic flow is:
