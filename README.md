@@ -89,7 +89,7 @@ You **must** have the `ble_daemon` script running in a Command Prompt window whi
 
 This is what ties it all together - each sequence will start by telling Skelly what vocal track to play. Again, make sure you have the **Advanced** Light-O-Rama license for this - you won't have the ability to use Windows system commands if you don't. 
 
-To add the command to your LOR sequence, open a sequence in the Light-O-Rama sequencer software and go to Sequence -> Windows command. 
+To add the command to your LOR sequence, open a sequence in the Light-O-Rama sequencer software and click on **Sequence**, then  **Windows Command**. 
 
 From there, you can select the `.cmd` file to start communicating with Skelly. There's an example in the `commands` folder. 
 
